@@ -89,7 +89,11 @@ legend {
 
 label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 8px
+}
+.lable-div label{
+    display: block;
+    margin:40px
 }
 
 label.light {
@@ -111,10 +115,15 @@ label.light {
     border-radius: 100%;
 }
 
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 480px) {
 
     form {
-        max-width: 480px;
+        /* max-width: 480px; */
     }
 
 }

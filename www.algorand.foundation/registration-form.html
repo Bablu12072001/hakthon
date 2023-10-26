@@ -29,6 +29,10 @@
       .follow-us a i {
         margin-right: 40px; /* Adjust the value as needed */
       }
+
+      .inputfild {
+        margin-right: 45px;
+      }
     </style>
   </head>
 
@@ -55,6 +59,11 @@
             <label for="team_name">Team Name <span>*</span></label>
             <input type="text" id="team_name" name="team_name" required />
           </div>
+
+          <div class="sign-up__form-control">
+            <label for="address_line">Address <span>*</span></label>
+            <input type="text" id="address_line" name="address_line" required />
+          </div>
           <div class="sign-up__form-control">
             <label for="theme">Theme</label>
             <select name="theme" id="theme">
@@ -73,10 +82,7 @@
               <option value="DeFi and Finance">DeFi and Finance</option>
             </select>
           </div>
-          <div class="sign-up__form-control">
-            <label for="address_line">Address <span>*</span></label>
-            <input type="text" id="address_line" name="address_line" required />
-          </div>
+
           <div class="sign-up__form-control">
             <label for="description">Description <span>*</span></label>
             <textarea id="description" name="description" required></textarea>
@@ -88,12 +94,23 @@
           </div>
           <button type="button" id="addTeamMember">Add Team Member</button>
 
-          <div class="terms-and-conditions">
+          <!-- <div class="terms-and-conditions">
             <input type="checkbox" id="terms" required />
             <label for="terms"
               >I agree to the
               <a href="javascript:void(0);" onclick="showTerms()"
                 >Terms and Conditions</a
+              ></label
+            >
+          </div> -->
+
+          <div style="display: flex; margin: 10px">
+            <!-- Don't do this -->
+            <input type="checkbox" id="terms" name="name" />
+            <label for="terms"
+              >I accept the
+              <a href="javascript:void(0);" onclick="showTerms()"
+                >terms and conditions ;</a
               ></label
             >
           </div>
@@ -239,17 +256,29 @@
           memberCount++;
           // Create input fields for a team member
           const teamMemberHtml = `
-             <div class="team-member" id="team-member-${memberCount}">
-              <div style="margin-bottom: 20px"><strong >Team ${memberCount} </strong></div>
-              <label for="name">Name <span>*</span></label>
-              <input type="text" name="name" required />
-              <label for="email">Email <span>*</span></label>
-              <input type="email" name="email" required />
-              <label for="phone">Phone</label>
-              <input type="tel" name="phone" />
-              <label for="college">College <span>*</span></label>
-              <input type="text" name="college" required />
-              <button type="button" class="removeTeamMember" data-id="${memberCount}">Remove Member</button>
+            <div class="team-member"  id="team-member-${memberCount}">
+            <div style="margin-bottom: 20px"><strong >Team ${memberCount} </strong></div>
+            <div class="lable-div"> 
+                  <div style="display: flex;flex-direction: row; ">
+                <label for="name" style="display:block; margin">Name <span>*</span>
+                  <input type="text" name="name" required="">
+                  </label>
+                <label for="email">Email <span>*</span>
+                  <input type="email" name="email" required="">
+                  </label>
+                </div>
+
+             <div style="display: flex;flex-direction: row; ">
+                <label for="phone" style="display:block; margin">Phone <span>*</span>
+                  <input type="tel" name="phone" required >
+                  </label>
+                <label for="college">College <span>*</span>
+                  <input type="text" name="college" required >
+                  </label>
+                </div>
+                <button type="button" class="removeTeamMember" data-id="${memberCount}">Remove Member</button>
+              </div>
+          
             </div>
           `;
 
