@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
     color: #384047;
 }
 
@@ -46,9 +46,14 @@ select {
     padding: 15px;
     width: 100%;
     background-color: #e8eeef;
-    color: #8a97a0;
+    color: #191a1a;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
     margin-bottom: 30px;
+    width: 100%;
+    padding: 16px 20px;
+    /* border: none; */
+    border-radius: 4px;
+    border: 1px solid #7c7c7c;
 }
 
 input[type="radio"],
@@ -62,9 +67,35 @@ select {
     border-radius: 2px;
 }
 
+.btn {
+    background-color: DodgerBlue;
+    /* Blue background */
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* White text */
+    padding: 12px 16px;
+    /* Some padding */
+    font-size: 16px;
+    /* Set a font size */
+    cursor: pointer;
+    /* Mouse pointer on hover */
+    width: auto;
+}
+
+/* Dotted border */
+hr.dotted {
+    border-top: 3px dotted #bbb;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
+}
+
 button {
     padding: 19px 39px 18px 39px;
-    color: #FFF;
+    color: #fff;
     background-color: #4bc970;
     font-size: 18px;
     text-align: center;
@@ -89,12 +120,13 @@ legend {
 
 label {
     display: block;
-    margin-bottom: 8px
+    margin-bottom: 8px;
 }
-.lable-div label{
+
+.lable-div label {
     display: block;
-    margin-right:50px;
-   
+    margin-right: 40px;
+    max-width: max-content;
 }
 
 label.light {
@@ -122,9 +154,7 @@ label.light {
 }
 
 @media screen and (min-width: 480px) {
-
     form {
         /* max-width: 480px; */
     }
-
 }

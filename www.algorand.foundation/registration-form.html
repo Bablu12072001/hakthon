@@ -14,20 +14,26 @@
       body {
         font-family: Arial, sans-serif;
       }
+
       .section-heading {
         font-size: 24px;
         font-weight: bold;
         margin-top: 20px;
       }
+
       .highlight {
         background-color: #ffff00;
         font-weight: bold;
       }
+
       .box button {
-        margin-right: 10px; /* Adjust the margin value to control the space between buttons */
+        margin-right: 10px;
+        /* Adjust the margin value to control the space between buttons */
       }
+
       .follow-us a i {
-        margin-right: 40px; /* Adjust the value as needed */
+        margin-right: 40px;
+        /* Adjust the value as needed */
       }
 
       .inputfild {
@@ -40,18 +46,29 @@
     <main class="container" id="registrationContainer">
       <section class="sign-up">
         <h1>Register <span>for Hackathon</span></h1>
-
         <form class="sign-up__form" id="signupForm">
           <div class="follow-us">
             <h4>Follow us</h4>
-            <a href="https://www.linkedin.com/" target="_blank">
+            <a
+              href="https://www.linkedin.com/company/p5-digital-solution/"
+              target="_blank"
+            >
               <i class="fab fa-linkedin fa-2x"></i>
             </a>
-            <a href="https://www.facebook.com/" target="_blank">
+            <a
+              href="https://www.facebook.com/P5digitalsolutions"
+              target="_blank"
+            >
               <i class="fab fa-facebook fa-2x"></i>
             </a>
-            <a href="https://www.instagram.com/" target="_blank">
+            <a
+              href="https://www.instagram.com/p5digitalsolutions/"
+              target="_blank"
+            >
               <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://twitter.com/p5_digital" target="_blank">
+              <i class="fa-brands fa-twitter fa-2x"></i>
             </a>
           </div>
           <hr />
@@ -59,7 +76,6 @@
             <label for="team_name">Team Name <span>*</span></label>
             <input type="text" id="team_name" name="team_name" required />
           </div>
-
           <div class="sign-up__form-control">
             <label for="address_line">Address <span>*</span></label>
             <input type="text" id="address_line" name="address_line" required />
@@ -82,18 +98,22 @@
               <option value="DeFi and Finance">DeFi and Finance</option>
             </select>
           </div>
-
           <div class="sign-up__form-control">
-            <label for="description">Description <span>*</span></label>
-            <textarea id="description" name="description" required></textarea>
+            <label for="description"
+              >Description (max 300 words) <span>*</span></label
+            >
+            <textarea
+              maxlength="300"
+              id="description"
+              name="description"
+              required
+            ></textarea>
           </div>
-
           <!-- Team Details -->
           <div id="team-details">
             <!-- JavaScript will dynamically add team details here -->
           </div>
           <button type="button" id="addTeamMember">Add Team Member</button>
-
           <!-- <div class="terms-and-conditions">
             <input type="checkbox" id="terms" required />
             <label for="terms"
@@ -103,7 +123,6 @@
               ></label
             >
           </div> -->
-
           <div style="display: flex; margin: 10px">
             <!-- Don't do this -->
             <input type="checkbox" id="terms" name="name" />
@@ -114,20 +133,22 @@
               ></label
             >
           </div>
-
           <div style="display: flex" class="box">
-            <button type="submit" id="submitButton" disabled>Submit</button>
-            <button type="button" id="backButton" onclick="goBackHome()">
+            <button
+              type="button"
+              id="backButton"
+              style="background-color: beige; color: black"
+              onclick="goBackHome()"
+            >
               Back
             </button>
+            <button type="submit" id="submitButton" disabled>Submit</button>
           </div>
         </form>
       </section>
     </main>
-
     <div id="termsContainer" style="display: none">
       <h1>Hackathon 2023 Terms and Conditions</h1>
-
       <div class="section-heading">Application and Registration</div>
       <p>
         Participants must apply for Hackathon 2023 via
@@ -137,7 +158,6 @@
         Participants must confirm their registration for Hackathon 2023 to
         attend.
       </p>
-
       <div class="section-heading">Eligibility</div>
       <p>
         All participants in Hackathon 2023 must be aged 18 years or older. Any
@@ -167,7 +187,6 @@
         or any other participant and/or team. This determination is at the sole
         discretion of the Organizers.
       </p>
-
       <div class="section-heading">Rules</div>
       <p>The following actions are prohibited:</p>
       <ol>
@@ -201,7 +220,6 @@
         Close
       </button>
     </div>
-
     <div
       id="successPopup"
       style="
@@ -218,7 +236,6 @@
     >
       Form submitted successfully!
     </div>
-
     <script>
       // JavaScript code to add and remove team members and handle form submission
       const teamDetailsContainer = document.getElementById("team-details");
@@ -257,7 +274,9 @@
           // Create input fields for a team member
           const teamMemberHtml = `
             <div class="team-member"  id="team-member-${memberCount}">
-            <div style="margin-bottom: 20px"><strong >Team ${memberCount} </strong></div>
+            <div style="margin-bottom: 20px;display:flex; justify-content: space-between;"><strong >Team ${memberCount} </strong>
+              <button  class="btn" data-id="${memberCount}"><i class="fa fa-trash"></i> Remove</button>
+              </div>
             <div class="lable-div"> 
                   <div style="display: flex;flex-direction: row; ">
                 <label for="name" style="display:block; margin">Name <span>*</span>
@@ -276,8 +295,8 @@
                   <input type="text" name="college" required >
                   </label>
                 </div>
-                <button type="button" class="removeTeamMember" data-id="${memberCount}">Remove Member</button>
-              </div>
+                <hr class="dotted">
+                </div>
           
             </div>
           `;
@@ -291,7 +310,7 @@
 
           // Add an event listener to the newly added "Remove Member" button
           const removeMemberButton = teamMemberDiv.querySelector(
-            `button.removeTeamMember[data-id="${memberCount}"]`
+            `button.btn[data-id="${memberCount}"]`
           );
           removeMemberButton.addEventListener("click", () => {
             teamDetailsContainer.removeChild(teamMemberDiv);
