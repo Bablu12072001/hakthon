@@ -74,12 +74,12 @@
             </select>
           </div>
           <div class="sign-up__form-control">
-            <label for="description">Description <span>*</span></label>
-            <textarea id="description" name="description" required></textarea>
-          </div>
-          <div class="sign-up__form-control">
             <label for="address_line">Address <span>*</span></label>
             <input type="text" id="address_line" name="address_line" required />
+          </div>
+          <div class="sign-up__form-control">
+            <label for="description">Description <span>*</span></label>
+            <textarea id="description" name="description" required></textarea>
           </div>
 
           <!-- Team Details -->
@@ -185,6 +185,23 @@
       </button>
     </div>
 
+    <div
+      id="successPopup"
+      style="
+        display: none;
+        background-color: #00ff00;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+      "
+    >
+      Form submitted successfully!
+    </div>
+
     <script>
       // JavaScript code to add and remove team members and handle form submission
       const teamDetailsContainer = document.getElementById("team-details");
@@ -222,7 +239,8 @@
           memberCount++;
           // Create input fields for a team member
           const teamMemberHtml = `
-            <div class="team-member" id="team-member-${memberCount}">
+             <div class="team-member" id="team-member-${memberCount}">
+              <div><strong>Team ${memberCount} </strong></div>
               <label for="name">Name <span>*</span></label>
               <input type="text" name="name" required />
               <label for="email">Email <span>*</span></label>
@@ -282,7 +300,76 @@
         e.preventDefault();
         // Handle form submission here
         // You can submit the form data to your server or perform any necessary actions.
+        const formData = {
+          team_name: document.getElementById("team_name").value,
+          theme: document.getElementById("theme").value,
+          address_line: document.getElementById("address_line").value,
+          description: document.getElementById("description").value,
+          team_details: [], // Initialize an empty array for team details
+
+          // You can add more form fields here
+        };
+
+        // Add team members to the formData
+        for (let i = 1; i <= memberCount; i++) {
+          const teamMember = document.getElementById(`team-member-${i}`);
+          formData.team_details.push({
+            name: teamMember.querySelector('input[name="name"]').value,
+            email: teamMember.querySelector('input[name="email"]').value,
+            phone: teamMember.querySelector('input[name="phone"]').value,
+            college: teamMember.querySelector('input[name="college"]').value,
+          });
+        }
+
+        const termsCheckbox = document.getElementById("terms");
+        if (termsCheckbox.checked) {
+          // Send the formData to the API
+          submitFormToAPI(formData);
+          // Reset the form
+          signupForm.reset();
+          // Reset the team member count
+          memberCount = 0;
+          teamDetailsContainer.innerHTML = ""; // Clear the team details container
+          // Update button visibility
+          checkAddButtonVisibility();
+
+          // Show the success message popup
+          const successPopup = document.getElementById("successPopup");
+          successPopup.style.display = "block";
+
+          // Hide the success message popup after a few seconds (e.g., 3 seconds)
+          setTimeout(() => {
+            successPopup.style.display = "none";
+          }, 3000); // Adjust the time as needed
+        } else {
+          // Display a popup if the checkbox is not checked
+          alert("Please check the Terms and Conditions.");
+        }
       });
+
+      function submitFormToAPI(formData) {
+        fetch(
+          "https://yvoj2fs61g.execute-api.ap-south-1.amazonaws.com/p5/hackathon",
+          {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the API response here
+            console.log("API response:", data);
+            // You can display a success message to the user or redirect to a success page here
+          })
+          .catch((error) => {
+            // Handle errors if the API request fails
+            console.error("API error:", error);
+            // You can display an error message to the user here
+          });
+      }
 
       // Initial check for the "Add Team Member" button visibility
       checkAddButtonVisibility();
