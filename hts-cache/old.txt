@@ -1,3 +1,0 @@
-date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
-16:24:40	858/858	---M--	403	error ('Forbidden')	text/html		https://www.ces.tech/robots.txt		(from )
-16:24:40	863/863	---M--	403	error ('Forbidden')	text/html		https://www.ces.tech/	E:/New%20folder%20(2)/hakthon/www.ces.tech/index.html	(from )

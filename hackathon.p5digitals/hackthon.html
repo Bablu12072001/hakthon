@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hackathon</title>
+  <link href="./assets/css/algor.webflow.960d47c94.css" rel="stylesheet" type="text/css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" />
+  <!-- Ionic icons -->
+  <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="other.css" />
+  <link href="./assets/62d0550ecf756b5bde4a4e15_62ad7c27450de1398a077422_a-32.png" rel="shortcut icon"
+    type="image/x-icon" />
+  <link href="./assets/62ad7c2bbb3c55743c3d545b_a-256.png" rel="apple-touch-icon" />
+  <!-- Memberstack webflow package -->
+  <!-- Finsweet Cookie Consent -->
+  <!-- Please keep this css code to improve the font quality-->
+  <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+  <!-- Hiding hubspot form-->
+  <!-- <style>
+#hs-eu-cookie-confirmation-inner {
+  display:none;
+}
+</style>
+-->
+  <style>
+    .skip-link {
+      /** left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);**/
+      width: fit-content;
+    }
+  </style>
+  <!--hs form style css in global footer, education, ace contact, contact us -->
+  <style>
+    .hbspt-form>form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2.5rem;
+    }
+
+    label {
+      font-weight: 500;
+      display: block;
+      color: #201f21;
+      margin-bottom: 0.4rem;
+    }
+
+    fieldset>div>.input,
+    fieldset>div>div>.input,
+    fieldset>div>div>div>div>.input {
+      height: auto !important;
+      padding-top: 0 !important;
+      padding-left: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      transition: none !important;
+      color: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+    }
+
+    .input>input,
+    .input>select,
+    .input>textarea {
+      display: block;
+      width: 100% !important;
+      padding: 8px 12px;
+      line-height: 1.42857143;
+      vertical-align: middle;
+      height: 3.125rem;
+      margin-bottom: 0;
+      padding-right: 2rem;
+      padding-left: 2rem;
+      border: 1px solid rgba(32, 31, 33, 0.4);
+      border-radius: 50rem;
+      background-color: transparent;
+      color: inherit;
+      text-decoration: inherit;
+      font-size: inherit;
+    }
+
+    fieldset {
+      display: flex;
+      max-width: 100% !important;
+    }
+
+    .hs_email.hs-email,
+    .form-columns-2>div>.hs-form-field,
+    .form-columns-1>.hs-form-field,
+    .form-columns-1>.hs-dependent-field,
+    .legal-consent-container>div>.hs-dependent-field>.hs-form-field>.input>.inputs-list>li>label>span {
+      width: 100% !important;
+    }
+
+    .form-columns-2>div {
+      width: 50%;
+    }
+
+    .form-columns-0 {
+      display: none;
+    }
+
+    .inputs-list {
+      list-style: none;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-left: 0;
+    }
+
+    input[type="checkbox"] {
+      width: 1.5rem;
+      height: 1.5rem;
+      min-height: 1.5rem;
+      min-width: 1.5rem;
+      margin-top: 0px;
+      margin-right: 1rem;
+      border-width: 2px;
+      border-top-color: hsl(223deg 100% 15%);
+      border-right-color: hsl(223deg 100% 15%);
+      border-bottom-color: hsl(223deg 100% 15%);
+      border-left-color: hsl(223deg 100% 15%);
+      border-radius: 0.5rem;
+      transition-property: all;
+      transition-duration: 200ms;
+      transition-timing-function: ease;
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    .actions>.hs-button {
+      padding: 0.75rem 3rem 0.75rem 1.6rem;
+      border: 1px #000;
+      border-radius: 50rem;
+      background-color: #dcfe54;
+      background-image: url("https://assets-global.website-files.com/62d96b0e9ea60fd1c96a1b50/62d96b0e9ea60f6d3d6a1cfc_arrow-right.svg");
+      background-position: 82% 50%;
+      background-size: auto;
+      background-repeat: no-repeat;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      font-family: Suisseintl, sans-serif;
+      color: #201f21;
+      font-size: 1rem;
+      font-weight: 400;
+      text-align: center;
+      text-decoration: none;
+      width: 12rem;
+    }
+
+    .input>textarea {
+      min-height: 13rem;
+      border-radius: 30px !important;
+    }
+
+    .hs-error-msg,
+    .hs-main-font-element {
+      color: red;
+    }
+
+    .hs-error-msgs {
+      margin-left: 20px;
+    }
+
+    [role="checkbox"]>li>label>span {
+      vertical-align: super;
+    }
+
+    .submitted-message {
+      color: black !important;
+    }
+
+    .legal-consent-container>.hs-richtext,
+    .hs_recaptcha {
+      display: none;
+    }
+
+    @media only screen and (max-width: 500px) {
+
+      .hbspt-form>form,
+      fieldset {
+        display: block;
+      }
+
+      form>fieldset>div {
+        padding: 10px 0px;
+      }
+
+      .form-columns-2>div {
+        width: 100%;
+      }
+    }
+  </style>
+  <!-- Twitter conversion tracking base code -->
+  <script>
+    !(function (e, t, n, s, u, a) {
+      e.twq ||
+        ((s = e.twq =
+          function () {
+            s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+          }),
+          (s.version = "1.1"),
+          (s.queue = []),
+          (u = t.createElement(n)),
+          (u.async = !0),
+          (u.src = "../static.ads-twitter.com/uwt.js"),
+          (a = t.getElementsByTagName(n)[0]),
+          a.parentNode.insertBefore(u, a));
+    })(window, document, "script");
+    twq("config", "o3mxy");
+  </script>
+  <!-- End Twitter conversion tracking base code -->
+  <!-- Meta tag OG image helpers-->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <style>
+    .hs-form-320e876f-01c1-4d39-b4aa-2a1d654d09be_4e506186-8057-4d54-8679-b8227dc78efb.hs-form {
+      width: 100% !important;
+    }
+
+    .video-button:hover>.video-button-icon {
+      display: none;
+    }
+
+    .video-button:hover>.video-button-icon.orange {
+      display: inline-block;
+    }
+
+    .hackathon-track-tab.w--current>.hackathon-tabs-label {
+      color: #01dc94;
+    }
+
+    .hackathon-track-tab:hover>.hackathon-tabs-label {
+      color: #01dc94 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <script language="JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./function.js"></script>
+  <script type="text/javascript" src="./header.js"></script>
+  <!-- E N D  N A V B A R -->
+  <script>
+    $("nav-item nav-custom-link").click(function (event) {
+      event.preventDefault();
+      $("nav-item nav-custom-link").removeClass("active");
+      $(this).addClass("active");
+    });
+  </script>
+  <div class="page-wrapper">
+    <div class="top">
+      <div class="gtm-code w-embed w-iframe">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XBZ7HB" height="0" width="0"
+            style="display: none; visibility: hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+      </div>
+      <a id="skip-link" href="#" class="skip-link">Skip to Content</a>
+    </div>
+    <div class="global-styles w-embed">
+      <style>
+        /* Lime Card*/
+        .cut-corners-div {
+          background: linear-gradient(45deg,
+              rgba(255, 255, 255, 0) 4%,
+              rgba(220, 254, 84, 1) 4%,
+              rgba(220, 254, 84, 1) 96%,
+              rgba(255, 255, 255, 0) 96%);
+        }
+
+        /* Grey Card */
+        .cut-corners-div-grey {
+          background: linear-gradient(45deg,
+              rgba(255, 255, 255, 0) 4%,
+              rgba(246, 246, 246, 1) 4%,
+              rgba(246, 246, 246, 1) 96%,
+              rgba(255, 255, 255, 0) 96%);
+        }
+
+        /* Sky Teal Card*/
+        .cut-corners-div-skyteal {
+          background: linear-gradient(45deg,
+              rgba(255, 255, 255, 0) 4%,
+              rgba(49, 216, 238, 1) 4%,
+              rgba(49, 216, 238, 1) 96%,
+              rgba(255, 255, 255, 0) 96%);
+        }
+
+        /* Teal Card */
+        .cut-corners-div-teal {
+          background: linear-gradient(45deg,
+              rgba(255, 255, 255, 0) 4%,
+              rgba(0, 104, 131, 1) 4%,
+              rgba(0, 104, 131, 1) 96%,
+              rgba(255, 255, 255, 0) 96%);
+        }
+
+        /* Alt Green Card (AlgoKit Green) */
+        .cut-corners-div-green-alt {
+          background: linear-gradient(45deg,
+              rgba(255, 255, 255, 0) 4%,
+              rgba(1, 220, 148, 1) 4%,
+              rgba(1, 220, 148, 1) 96%,
+              rgba(255, 255, 255, 0) 96%);
+        }
+
+        /* Grey Card (cut at the TOP RIGHT corner) */
+        .cut-corners-div-grey-top-right {
+          background: linear-gradient(45deg,
+              rgba(246, 246, 246, 1) 4%,
+              rgba(246, 246, 246, 1) 4%,
+              rgba(246, 246, 246, 1) 96%,
+              rgba(255, 255, 255, 0) 96%);
+        }
+
+        /* Lime Card (cut at the TOP RIGHT corner) */
+        .cut-corners-div-lime-top-right {
+          background: linear-gradient(45deg,
+              rgba(220, 254, 84, 1) 4%,
+              rgba(220, 254, 84, 1) 4%,
+              rgba(220, 254, 84, 1) 96%,
+              rgba(255, 255, 255, 0) 96%);
+        }
+
+        /* Grey Card (cut at the BOTTOM RIGHT corner) */
+        .cut-corners-div-grey-bottom-right {
+          background: linear-gradient(135deg,
+              rgba(246, 246, 246, 1) 4%,
+              rgba(246, 246, 246, 1) 4%,
+              rgba(246, 246, 246, 1) 96%,
+              rgba(255, 255, 255, 0) 96%);
+        }
+
+        /* White Card (cut at the BOTTOM RIGHT corner) */
+        .cut-corners-div-white {
+          background: linear-gradient(135deg,
+              rgba(255, 255, 255, 0) 4%,
+              rgba(255, 255, 255, 0) 4%,
+              rgba(255, 255, 255, 0) 96%,
+              rgba(255, 255, 255, 1) 96%);
+        }
+
+        /* Snippet gets rid of top margin on first element in any rich text*/
+        .w-richtext> :first-child {
+          margin-top: 0;
+        }
+
+        /* Snippet gets rid of bottom margin on last element in any rich text*/
+        .w-richtext> :last-child,
+        .w-richtext ol li:last-child,
+        .w-richtext ul li:last-child {
+          margin-bottom: 0;
+        }
+
+        /* Snippet makes all link elements listed below to inherit color from their parent */
+        a,
+        .w-tab-link,
+        .w-nav-link,
+        .w-dropdown-btn,
+        .w-dropdown-toggle,
+        .w-dropdown-link {
+          color: inherit;
+        }
+
+        /* Snippet prevents all click and hover interaction with an element */
+        .clickable-off {
+          pointer-events: none;
+        }
+
+        /* Snippet enables all click and hover interaction with an element */
+        .clickable-on {
+          pointer-events: auto;
+        }
+
+        /* Snippet enables you to add class of div-square which creates and maintains a 1:1 dimension of a div.*/
+        .div-square::after {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+
+        /*Hide focus outline for main content element*/
+        main:focus-visible {
+          outline: -webkit-focus-ring-color auto 0px;
+        }
+
+        /* Make sure containers never lose their center alignment*/
+        .container-medium,
+        .container-small,
+        .container-large {
+          margin-right: auto !important;
+          margin-left: auto !important;
+        }
+
+        /*Reset selects, buttons, and links styles*/
+        .w-input,
+        .w-select,
+        a {
+          color: inherit;
+          text-decoration: inherit;
+          font-size: inherit;
+        }
+
+        /*Apply "..." after 3 lines of text */
+        .text-style-3lines {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+
+        /* Apply "..." after 2 lines of text */
+        .text-style-2lines {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+
+        /* Apply "..." at 100% width */
+        .truncate-width {
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        /* Removes native scrollbar */
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          overflow: -moz-scrollbars-none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+          display: none; // Safari and Chrome
+        }
+
+        /* Fluid Responsiveness */
+        html {
+          font-size: calc(0.625rem + 0.41666666666666663vw);
+        }
+
+        @media screen and (max-width: 1920px) {
+          html {
+            font-size: calc(0.625rem + 0.41666666666666674vw);
+          }
+        }
+
+        @media screen and (max-width: 1440px) {
+          html {
+            font-size: calc(0.3348214285714286rem + 0.6696428571428571vw);
+          }
+        }
+
+        @media screen and (max-width: 992px) {
+          html {
+            font-size: calc(0.38392857142857145rem + 0.8928571428571428vw);
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          html {
+            font-size: calc(0.5416666666666667rem + 0.6944444444444444vw);
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          html {
+            font-size: calc(0.7497390396659708rem + 0.4175365344467641vw);
+          }
+        }
+      </style>
+    </div>
+    <main id="main" class="main-wrapper">
+      <header class="section-header3 global-hackathon-page">
+        <div class="page-padding">
+          <div class="container-large">
+            <div class="w-layout-grid header3_component global-hackathon-page">
+              <div id="w-node-_4b80435c-41ad-717e-6d9f-843c53564ed9-af439189"
+                class="header3_content global-hackathon-page">
+                <div class="margin-bottom margin-xlarge">
+                  <h1 class="h1-super-heading-beni">Welcome to Hackathon</h1>
+                  <h1 class="h1-beni">Talk is cheap. Show me the code.</h1>
+                </div>
+                <div class="hero-button-wrapper">
+                  <a href="./registration-form.html" class="button-beni w-button" id="show-registration">Register
+                    Now!</a>
+                </div>
+                <!-- Popup container -->
+                <script>
+                  // JavaScript to handle the popup
+                  const showRegistrationButton =
+                    document.getElementById("show-registration");
+                  const registrationPopup =
+                    document.getElementById("registration-popup");
+                  const closePopupButton =
+                    document.getElementById("close-popup");
+
+                  showRegistrationButton.addEventListener(
+                    "click",
+                    function () {
+                      registrationPopup.style.display = "block";
+                    }
+                  );
+
+                  closePopupButton.addEventListener("click", function () {
+                    registrationPopup.style.display = "none";
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <header class="hackathon-info"></header>
+      <header class="section-header3 governance-page" style="background-color: rgb(154, 70, 112)">
+        <div class="page-padding">
+          <div class="container-large">
+            <div class="padding-vertical padding-medium the-algo-page-padding">
+              <div class="w-layout-grid header3_component the-algo-page">
+                <div class="header3_content">
+                  <div class="margin-top margin-small">
+                    <div class="padding-bottom padding-small">
+                      <h1 class="h2-large white">Theme of Hackathon</h1>
+                    </div>
+                    <div class="rtb-algo w-richtext">
+                      <p> Hackathons are intense events where innovative ideas are brought to life. The theme of the
+                        idea is to develop a technology for Hazaribagh and Jharkhand in the field of solving the problem
+                        of: </p>
+                      <ul role="list">
+                        <li>Citizen (Traffic, Transportation etc.)</li>
+                        <li>Real Estate & Designing</li>
+                        <li>Healthcare & Research</li>
+                        <li>Education & Consultant</li>
+                        <li>DeFi and Finance</li>
+                      </ul>
+                      <p> Remember that hackathons are like marathons. Some people go to compete but most people take
+                        part to better themselves and have fun. </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div
+                    id="w-node-bb8a166c-1774-00e9-9b15-bad272fabd0e-af43934f"
+                    class="header3_image-wrapper"
+                  >
+                    <img
+                      src="https://png.pngtree.com/template/20220419/ourmid/pngtree-hackathon-background-screen-hack-synth-poster-image_1174636.jpg"
+                      loading="lazy"
+                      alt="Coin image"
+                      class="header1_img"
+                    />
+                  </div> -->
+                <div class="hackathon-right">
+                  <div class="hackathon-awards">
+                    <h4>Prizes or Awards</h4>
+                    <div class="dotted-line"></div>
+                    <div class="hackathon-track-body-row">
+                      <h4 class="hackathon-table-heading">1st Prize</h4>
+                      <div class="dotted-line"></div>
+                      <h4 class="hackathon-heading-xlarge">5000</h4>
+                    </div>
+                    <div class="hackathon-track-body-row">
+                      <h4 class="hackathon-table-heading">2nd Prize</h4>
+                      <div class="dotted-line"></div>
+                      <h4 class="hackathon-heading-xlarge">3000</h4>
+                    </div>
+                    <div class="hackathon-track-body-row">
+                      <h4 class="hackathon-table-heading">3rd Prize</h4>
+                      <div class="dotted-line"></div>
+                      <h4 class="hackathon-heading-xlarge">1000</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section id="hero">
+        <div class="container text-center">
+          <h2>Our Sponshors</h2>
+        </div>
+        <br />
+        <div class="container">
+          <div class="row" style="display: flex; justify-content: space-around">
+            <div class="col-md-2" style="display: flex; justify-content: space-around">
+              <div style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  ">
+                <img src="./images/aisectuni.png" height="50em" width="200em" alt="Aisect University, Hazaribagh" />
+                <br />
+                <h5>Aisect University, Hazaribagh</h5>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  ">
+                <img src="fellamart.png" height="150em" style="border-radius: 10%" alt="  website creation" />
+                <br />
+                <h5>Fellamart</h5>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  ">
+                <img src="p5eventmngmnt.png" style="border-radius: 10%" alt="  Management" />
+                <br />
+                <h5>P5 Events Management</h5>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  ">
+                <br />
+                <img src="subhras.png" width="50%" alt=" Subhras" />
+                <br />
+                <h5>Subhras</h5>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  ">
+                <br />
+                <img src="tistrue.png" width="50%" alt="S  Pvt. Ltd." />
+                <br />
+                <h5>True Infosystems Pvt Ltd</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="hackathon-dates">
+        <div class="page-padding">
+          <div class="container-medium">
+            <div class="padding-vertical padding-xxhuge">
+              <div class="hackathon-date-grid">
+                <div id="w-node-_99f4e459-e93c-b7a6-51d0-72c59d9b520b-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">6th Nov</h2>
+                    <p class="hackathon-body">Registration <br />Closes</p>
+                    <p> Last day for the registration and the submission of the idea will be 6 th of November 2023. </p>
+                  </div>
+                </div>
+                <div id="w-node-e4bf3ac2-9c01-eef2-1b90-89b1e986b07f-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">7th Nov</h2>
+                    <p class="hackathon-body"> Shortlisted candidates will be notified through email / phone. </p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body"> Team need to present their Idea in front of judges after 3:00 PM 8 th
+                      November 2023. </p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body"> Team need to present their Idea in front of judges after 3:00 PM 8 th
+                      November 2023. </p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body">10:30 AM Arrival of the team</p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body"> 10:45 AM Opening Ceremony and Introduction of the Team. </p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body"> 11:15 Brief Introduction of the Sponshors and there Products. </p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body">2:00 PM Lunch Break</p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body"> 3:00 PM Prensentation of the Project and idea in front of judges </p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body">5:30 PM Prize Distribution</p>
+                  </div>
+                </div>
+                <div id="w-node-_05e7e33d-e933-eb26-bec3-f7961bf09952-af439189" class="hackathon-date-card">
+                  <div class="hackathon-date-card-inner">
+                    <h2 class="heading-hackathon-date-card">8th Nov</h2>
+                    <p class="hackathon-body"> 6:00 PM Thank you and closing Ceremony </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="hackathon-date-grid-text top">Hackathon 2023 Event</h3>
+          <h3 class="hackathon-date-grid-text left">October</h3>
+          <h3 class="hackathon-date-grid-text right">2023</h3>
+          <h3 class="hackathon-date-grid-text bottom"> Talk is cheap. Show me the code. </h3>
+        </div>
+      </div>
+      <div class="hackathon-judges">
+        <div class="page-padding">
+          <div class="container-large">
+            <div class="margin-vertical margin-huge">
+              <div class="margin-bottom margin-xlarge">
+                <h2 class="hackathon-heading-large">Judging Criteria</h2>
+                <p> Project ideas for Hackathon 2023 may be preconceived or spontaneously created at the event. </p>
+                <br />
+                <p> Each participating team may submit only one project for final consideration by judges. Submissions
+                  must be submitted prior to the scheduled presentation time in order to be eligible to win prizes. </p>
+                <br />
+                <p> Additional prizes may be available solely at the discretion of the Organizers. Full details about
+                  all additional awards will be made known at the beginning of Hackathon 2023. The Organizers have the
+                  right to add or remove Award categories at their discretion. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="margin-bottom margin-huge">
+        <div class="hackathon-updates">
+          <div class="page-padding">
+            <div class="container-large">
+              <div class="margin-vertical margin-huge">
+                <div class="margin-bottom margin-large">
+                  <h2 class="hackathon-heading-large"> Hackathon 2023 <br /> Participation Terms and Condition Agreement
+                  </h2>
+                </div>
+                <div class="rich-text-field w-richtext">
+                  <ol role="list" class="w-list-unstyled">
+                    <li>
+                      <strong>🚀P5 digital Solutions (the "Organizers") are organizing Hackathon 2023 to be held on
+                        November, 8 2023 in AISECT University Campus, Meru, Hazaribag. </strong>By registering for
+                      and/or attending Hackathon 2023, you (the “Participant”) accept these terms and conditions (and
+                      any amendments to them), which are final and binding in all respects: <h4><b>Application and
+                          Registration</b></h4> Participants must apply for Hackathon 2023 via
+                      https://www.p5digital.in/. If accepted, Participants will be provided instructions to confirm
+                      their registration for Hackathon 2023 via email prior to the event. Participants must confirm
+                      their registration for Hackathon 2023 to attend <h4><b>Eligibility </b></h4> All participants in
+                      Hackathon 2023 must be aged 18 years or older. Any participant who is under the age of 18 must
+                      obtain parental permission to participate in Hackathon 2023, and they and their parent or legal
+                      guardian must sign the accompanying Parental Release and Consent Form <br />
+                      <br /> Participants are encouraged to work in teams of up to 6 on a maximum of one project.
+                      <br /><br /> Registration for Hackathon 2023 constitutes acceptance of these terms and conditions
+                      (and any amendments to them), which are final and binding in all respects. <br />
+                      <br /> All individuals and teams that apply to Hackathon 2023 must be accepted by the Organizers
+                      in order to be eligible to participate. <br /><br /> The Organizers reserve the right to
+                      disqualify any participant and/or team from Hackathon 2023 if, in their sole discretion, the
+                      participant and/or team has not complied with these terms and conditions, has tampered with the
+                      operation of Hackathon 2023, or has engaged in any conduct that is detrimental or unfair to the
+                      Organizers, Hackathon 2023, or any other participant and/or team. This determination is at the
+                      sole discretion of the Organizers.
+                    </li>
+                  </ol>
+                  <ol role="list" class="w-list-unstyled">
+                    <h4><b>Rules</b></h4>
+                    <ul style="font-size: 18px"> The following actions are prohibited: </ul>
+                    <li>1. Plagiarism;</li>
+                    <li> 2. Using code that was written prior to the event; </li>
+                    <li> 3. Submitting the same or similar code to multiple events, including Hackathon 2023 </li>
+                    <li>4. Violating the Hackathon 2023 Code of Conduct</li>
+                    <li> 5. Collaborating with outside individuals who have not been accepted as a Participant of
+                      Hackathon 2023 and have not been authorized to provide assistance by the Organizers </li>
+                    <li> 6. Any action which the Organizers in their discretion determine constitutes unfair,
+                      fraudulent, or illegal competition. </li>
+                  </ol>
+                  <ul style="font-size: 20px">
+                    <b> Violation of any of the above rules will result in:</b>
+                    <li> Automatic exclusion from and/or forfeiture of any prizes or awards;  Removal from the event.
+                    </li>
+                    <li>Removal from the event.</li>
+                    <p> All Participants are required to make their submission’s GitHub repos public; Any work submitted
+                      must be made public </p>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="text/javascript" src="footer.js"></script>
+  <!-- <script src="../d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c879f6.js?site=62d96b0e9ea60fd1c96a1b50"
+    type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script> -->
+  <!-- Global Event Modal -->
+  <!-- <script src="../cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<!-- Mirrored from www.algorand.foundation/build-a-bull-hackathon?utm_source=Google&utm_medium=paidsearch&utm_campaign=Hackathon&utm_content=register&utm_term=allnonbrand&utm_source=google&utm_medium=cpc&utm_campaign=20568089981&utm_adgroup=153068630385&utm_term=upcoming%20hackathons&gclid=CjwKCAjwkNOpBhBEEiwAb3MvvW47dBI_Tt5FMHR01NXLoZNW2Da2LWAXHrNfU23oWZ3EL6drMF6eMxoCTAIQAvD_BwE by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Oct 2023 10:58:32 GMT -->
+
+</html>

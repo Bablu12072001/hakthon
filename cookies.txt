@@ -1,7 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-.ces.tech	TRUE	/	FALSE	1999999999	visid_incap_2591118	UPPKHqJRTzy6IdP/bR8kC23/NGUAAAAAQUIPAAAAAAD1+6XctsHNMYL2orC2aZC/
-.ces.tech	TRUE	/	FALSE	1999999999	incap_ses_736_2591118	fb9hEWvQpBSZkBfYtc02Cm3/NGUAAAAABnwJIhzko/7Wo8t2iHh2BQ==
-.bamboohr.com	TRUE	/	FALSE	1999999999	_cfuvid	FEsMnBZwVLKj3fiIJLNG4LCQtozH6oaUgXgYfyyia1s-1697972424696-0-604800000
-algorandfoundation.bamboohr.com	TRUE	/	FALSE	1999999999	SameSite	None
-
