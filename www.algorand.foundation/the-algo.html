@@ -8,7 +8,7 @@
   <!-- Mirrored from www.algorand.foundation/the-algo by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Oct 2023 11:00:30 GMT -->
   <head>
     <meta charset="utf-8" />
-    <title>Introducing the Algo | Algorand Foundation</title>
+    <title>Introducing Hackthon</title>
     <meta
       content="The Algo is the native token of the Algorand blockchain. It&#x27;s super-fast, scalable, secure and It&#x27;s almost free to use"
       name="description"
@@ -50,6 +50,35 @@
       rel="stylesheet"
       type="text/css"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="other.css" type="text/css" />
+
+    <!-- Ionic icons -->
+    <link
+      href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <script type="text/javascript">
       !(function (o, c) {
         var n = c.documentElement,
@@ -325,6 +354,22 @@ I didn't use the hide class because this is a component used in other pages as w
     </style>
   </head>
   <body>
+    <script
+      language="JavaScript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"
+    ></script>
+    <script type="text/javascript" src="./function.js"></script>
+    <script type="text/javascript" src="./header.js"></script>
+
+    <!-- E N D  N A V B A R -->
+    <script>
+      $("nav-item nav-custom-link").click(function (event) {
+        event.preventDefault();
+        $("nav-item nav-custom-link").removeClass("active");
+        $(this).addClass("active");
+      });
+    </script>
+
     <div class="page-wrapper">
       <div class="top">
         <div class="gtm-code w-embed w-iframe">
@@ -527,12 +572,12 @@ I didn't use the hide class because this is a component used in other pages as w
           }
           /* Removes native scrollbar */
           .no-scrollbar {
-            -ms-overflow-style: none; // IE 10+
-            overflow: -moz-scrollbars-none; // Firefox
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
           }
 
           .no-scrollbar::-webkit-scrollbar {
-            display: none; // Safari and Chrome
+            display: none;
           }
 
           /* Fluid Responsiveness */
@@ -565,164 +610,10 @@ I didn't use the hide class because this is a component used in other pages as w
             }
           }
         </style>
-
-        <style>
-          .skip-link {
-            padding: 0.75rem 3rem 0.75rem 1.6rem;
-            border-style: solid;
-            border-width: 1px;
-            border-color: #fff;
-            border-radius: 50rem;
-            background-color: #ff684e;
-            background-image: url("https://assets-global.website-files.com/62835f42aef969049eba0806/6286dd16e5168c08acd4b1e8_arrow-right-white.svg");
-            background-position: 88% 50%;
-            background-size: auto;
-            background-repeat: no-repeat;
-            -webkit-transition: all 200ms ease;
-            transition: all 200ms ease;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            width: fit-content;
-          }
-          .skip-main:hover {
-            border-style: solid;
-            border-color: #201f21;
-            background-color: transparent;
-            background-image: url("https://assets-global.website-files.com/62835f42aef969049eba0806/62998d221326a70b32f60c53_arrow-right.svg");
-            color: #201f21;
-          }
-        </style>
       </div>
       <div class="bg-gradient-top thealgo-page">
         <div class="bg-gradient-top layer-2 the-algo-page"></div>
         <div class="bg-gradient-top layer-3"></div>
-      </div>
-      <div class="bg-gradient-bottom-only the-algo-bottom-bg">
-        <div class="bg-gradient-bottom-only layer-1"></div>
-        <div class="bg-gradient-bottom-only layer-2"></div>
-      </div>
-      <nav class="navbar-desktop hide-tablet ace">
-        <div class="navbar-top">
-          <div class="navbar-container">
-            <div class="navbar-top-left">
-              <div class="inline-block">
-                <a
-                  href="hackthon.html"
-                  aria-current="page"
-                  class="nav-link-block for-top-dropdown w-inline-block w--current"
-                  ><div class="nav-link-top_text">Home</div></a
-                >
-              </div>
-              <div
-                data-hover="true"
-                data-delay="0"
-                class="dropdown-navbar-top w-dropdown"
-              >
-                <div
-                  class="navbar-top-dropdown-toggle first-one w-dropdown-toggle"
-                >
-                  <div class="inline-block">
-                    <div class="nav-link-top_text no-hover-effect">
-                      ABout us
-                    </div>
-                  </div>
-                </div>
-                <nav class="dropdown-navbar-top-list w-dropdown-list">
-                  <a
-                    href="the-algo.html"
-                    aria-current="page"
-                    class="nav-link-block for-top-dropdown w-inline-block w--current"
-                    ><div class="nav-link-top_text">Introduction</div></a
-                  >
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <div
-        data-animation="default"
-        class="navbar-tablet show-tablet w-nav"
-        data-easing2="ease"
-        data-easing="ease"
-        data-collapse="medium"
-        data-w-id="0895603a-2a81-89a5-c6f0-3e472231b833"
-        role="banner"
-        data-duration="400"
-        data-doc-height="1"
-      >
-        <div id="pop-up-wrapper" class="pop-up-wrapper">
-          <div
-            data-w-id="4ddfaf8b-ba8b-dd55-517d-5b3318c92e80"
-            class="pop-up-back"
-          ></div>
-        </div>
-        <div class="navbar_container">
-          <nav role="navigation" class="navbar-tablet_menu w-nav-menu">
-            <div class="navbar-tablet-top"></div>
-            <div class="navbar-tablet-bottom">
-              <div
-                data-hover="false"
-                data-delay="200"
-                data-w-id="0895603a-2a81-89a5-c6f0-3e472231b88c"
-                class="navbar-tablet_sub-menu-dropdown w-dropdown"
-              >
-                <div
-                  class="navbar-tablet_dropdwn-toggle for-sub-menu w-dropdown-toggle"
-                >
-                  <div
-                    class="dropdown-icon hide-tablet w-icon-dropdown-toggle"
-                  ></div>
-                  <a
-                    href="hackthon.html"
-                    aria-current="page"
-                    class="nav-link-block for-top-dropdown w-inline-block w--current"
-                    ><div class="nav-link-top_text">Home</div></a
-                  >
-                </div>
-              </div>
-              <div
-                data-hover="false"
-                data-delay="200"
-                data-w-id="aca67dc4-93a4-6b77-cf02-e7226f0650b3"
-                class="navbar-tablet_sub-menu-dropdown w-dropdown"
-              >
-                <div
-                  class="navbar-tablet_dropdwn-toggle for-sub-menu w-dropdown-toggle"
-                >
-                  <div
-                    class="dropdown-icon hide-tablet w-icon-dropdown-toggle"
-                  ></div>
-                  <div class="navbar-tablet_link">About us</div>
-                  <img
-                    src="https://assets-global.website-files.com/62d96b0e9ea60fd1c96a1b50/62d96b0e9ea60fbcb46a1ebe_Polygon 1.svg"
-                    loading="lazy"
-                    alt="dropdown icon "
-                    class="dropdown-icon for-tablet-submenu"
-                  />
-                </div>
-                <nav class="navbar-tablet_dropdown-list w-dropdown-list">
-                  <a
-                    href="the-algo.html"
-                    class="navbar-tablet_link w-dropdown-link"
-                    >Introduction</a
-                  >
-                </nav>
-              </div>
-            </div>
-          </nav>
-          <div class="navbar_menu-button w-nav-button">
-            <div class="menu-icon">
-              <div class="menu-icon_line-top"></div>
-              <div class="menu-icon_line-middle">
-                <div class="menu-icon_line-middle-inner"></div>
-              </div>
-              <div class="menu-icon_line-bottom"></div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <main id="main" class="main-wrapper">
@@ -779,187 +670,7 @@ I didn't use the hide class because this is a component used in other pages as w
         <section
           data-w-id="cd639067-2047-d2cd-d3ce-ce2717179203"
           class="section-ticker"
-        >
-          <div
-            class="padding-vertical padding-large reduced-padding-mobile-landscape"
-          >
-            <div class="ticker_component">
-              <div class="ticker_list the-algo-page">
-                <div
-                  id="w-node-_4ab8c532-48af-0588-50d1-a7118acffad0-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    circulating supply
-                  </p>
-                  <div class="ticker-number green circulating_supply">
-                    6,948,827,845
-                  </div>
-                </div>
-                <div
-                  id="w-node-_4ab8c532-48af-0588-50d1-a7118acffad5-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Active Addresses (1M)
-                  </p>
-                  <div class="ticker-number green">432,182</div>
-                </div>
-                <div
-                  id="w-node-_4ab8c532-48af-0588-50d1-a7118acffada-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Block Time
-                  </p>
-                  <div class="ticker-number green">4.29s</div>
-                </div>
-                <div
-                  id="w-node-_4ab8c532-48af-0588-50d1-a7118acffadf-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Forks
-                  </p>
-                  <div class="ticker-number green">0</div>
-                </div>
-                <div
-                  id="w-node-_4ab8c532-48af-0588-50d1-a7118acffae4-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Network Downtime
-                  </p>
-                  <div class="ticker-number green">0</div>
-                </div>
-                <div
-                  id="w-node-cd639067-2047-d2cd-d3ce-ce2717179207-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Committed to Governance
-                  </p>
-                  <div class="ticker-number green">6,709,254,353<br /></div>
-                </div>
-                <div
-                  id="w-node-cd639067-2047-d2cd-d3ce-ce271717920c-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    number of governors
-                  </p>
-                  <div class="ticker-number green number_of_governers">
-                    33,676
-                  </div>
-                </div>
-                <div
-                  id="w-node-cd639067-2047-d2cd-d3ce-ce2717179216-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    current period 3 rewards
-                  </p>
-                  <div class="ticker-number green">70.5M</div>
-                </div>
-              </div>
-              <div class="ticker_list the-algo-page">
-                <div
-                  id="w-node-_258352c3-0ece-239d-6fdc-3be8d392c4be-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    circulating supply
-                  </p>
-                  <div class="ticker-number green circulating_supply">
-                    6,948,827,845
-                  </div>
-                </div>
-                <div
-                  id="w-node-_258352c3-0ece-239d-6fdc-3be8d392c4c3-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Active Addresses (1M)
-                  </p>
-                  <div class="ticker-number green">432,182</div>
-                </div>
-                <div
-                  id="w-node-_258352c3-0ece-239d-6fdc-3be8d392c4c8-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Block Time
-                  </p>
-                  <div class="ticker-number green">4.29s</div>
-                </div>
-                <div
-                  id="w-node-_258352c3-0ece-239d-6fdc-3be8d392c4cd-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Forks
-                  </p>
-                  <div class="ticker-number green">0</div>
-                </div>
-                <div
-                  id="w-node-_258352c3-0ece-239d-6fdc-3be8d392c4d2-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Network Downtime
-                  </p>
-                  <div class="ticker-number green">0</div>
-                </div>
-                <div
-                  id="w-node-_258352c3-0ece-239d-6fdc-3be8d392c4d7-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    Committed to Governance
-                  </p>
-                  <div class="ticker-number green">6,709,254,353</div>
-                </div>
-                <div
-                  id="w-node-_258352c3-0ece-239d-6fdc-3be8d392c4dc-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    number of governers
-                  </p>
-                  <div class="ticker-number green">57,137</div>
-                </div>
-                <div
-                  id="w-node-_258352c3-0ece-239d-6fdc-3be8d392c4e1-af43934f"
-                  class="ticker_wrapper"
-                >
-                  <p class="text-size-small label-large-for-ticker white">
-                    current period 3 rewards
-                  </p>
-                  <div class="ticker-number green">70.5M</div>
-                </div>
-              </div>
-              <div class="marquee w-embed">
-                <style>
-                  .ticker_component > * {
-                    white-space: nowrap;
-                    will-change: transform;
-                    animation: marquee-horizontal 50s linear infinite;
-                  }
-
-                  /* Defines the animation */
-                  @keyframes marquee-horizontal {
-                    from {
-                      transform: translateX(0%);
-                    }
-                    to {
-                      transform: translateX(-100%);
-                    }
-                  }
-                </style>
-              </div>
-            </div>
-          </div>
-        </section>
+        ></section>
         <section class="section-icons3 thealgo hide">
           <div class="w-embed">
             <style>
@@ -1632,6 +1343,35 @@ I didn't use the hide class because this is a component used in other pages as w
 
     <!-- Global Event Modal -->
     <script src="../cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+
+    <script type="text/javascript" src="footer.js"></script>
+    <!--  E N D  F O O T E R  -->
+
+    <!-- External JavaScripts -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 
     <script>
       const delay = 2; // pop-up delay in seconds
