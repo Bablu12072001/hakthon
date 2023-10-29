@@ -1,104 +1,143 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Registration</title>
+    <!-- Include your CSS and JavaScript dependencies here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team Registration</title>
-  <!-- Include your CSS and JavaScript dependencies here -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="main.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
+      .section-heading {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
 
-    .section-heading {
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
+      .highlight {
+        background-color: #ffff00;
+        font-weight: bold;
+      }
 
-    .highlight {
-      background-color: #ffff00;
-      font-weight: bold;
-    }
+      .box button {
+        margin-right: 10px;
+        /* Adjust the margin value to control the space between buttons */
+      }
 
-    .box button {
-      margin-right: 10px;
-      /* Adjust the margin value to control the space between buttons */
-    }
+      .follow-us a i {
+        margin-right: 40px;
+        /* Adjust the value as needed */
+      }
 
-    .follow-us a i {
-      margin-right: 40px;
-      /* Adjust the value as needed */
-    }
+      .inputfild {
+        margin-right: 45px;
+      }
+    </style>
+  </head>
 
-    .inputfild {
-      margin-right: 45px;
-    }
-  </style>
-</head>
-
-<body>
-  <main class="container" id="registrationContainer">
-    <section style="padding-bottom: 40px;" class="sign-up">
-      <h1 style="padding-top: 20px;">Register <span>for Hackathon</span></h1>
-      <h2 style="color: beige;text-align: center;">Registration Rules <span>for Hackathon</span></h2>
-      <div style="text-align: center;">
-        <ul style="padding-bottom: 20px;display: inline-block;text-align: left;">
-          <li style="color: beige;"> Team should Come with their respective ID card </li>
-          <li style="color: beige;"> Free Registration</li>
-          <li style="color: beige;"> Team can be of 1 to 5 Members</li>
-          <li style="color: beige;"> There is no restriction on Member registration(i.e. can be from other college)</li>
-        </ul>
-      </div>
-      <form class="sign-up__form" id="signupForm">
-        <div class="follow-us">
-          <h4>Follow us</h4>
-          <a href="https://www.linkedin.com/company/p5-digital-solution/" target="_blank">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-          <a href="https://www.facebook.com/P5digitalsolutions" target="_blank">
-            <i class="fab fa-facebook fa-2x"></i>
-          </a>
-          <a href="https://www.instagram.com/p5digitalsolutions/" target="_blank">
-            <i class="fab fa-instagram fa-2x"></i>
-          </a>
-          <a href="https://twitter.com/p5_digital" target="_blank">
-            <i class="fa-brands fa-twitter fa-2x"></i>
-          </a>
+  <body>
+    <main class="container" id="registrationContainer">
+      <section style="padding-bottom: 40px" class="sign-up">
+        <h1 style="padding-top: 20px">Register <span>for Hackathon</span></h1>
+        <h2 style="color: beige; text-align: center">
+          Registration Rules <span>for Hackathon</span>
+        </h2>
+        <div style="text-align: center">
+          <ul
+            style="
+              padding-bottom: 20px;
+              display: inline-block;
+              text-align: left;
+            "
+          >
+            <li style="color: beige">
+              Team should Come with their respective ID card
+            </li>
+            <li style="color: beige">Free Registration</li>
+            <li style="color: beige">Team can be of 1 to 5 Members</li>
+            <li style="color: beige">
+              There is no restriction on Member registration(i.e. can be from
+              other college)
+            </li>
+          </ul>
         </div>
-        <hr />
-        <div class="sign-up__form-control">
-          <label for="team_name">Team Name <span>*</span></label>
-          <input type="text" id="team_name" name="team_name" required />
-        </div>
-        <div class="sign-up__form-control">
-          <label for="address_line">Address <span>*</span></label>
-          <input type="text" id="address_line" name="address_line" required />
-        </div>
-        <div class="sign-up__form-control">
-          <label for="theme">Theme</label>
-          <select name="theme" id="theme">
-            <option value="Citizen (Traffic, Transportation etc.)"> Citizen (Traffic, Transportation etc.) </option>
-            <option value="Real Estate & Designing"> Real Estate & Designing </option>
-            <option value="Healthcare & Research"> Healthcare & Research </option>
-            <option value="Education & Consultant"> Education & Consultant </option>
-            <option value="DeFi and Finance">DeFi and Finance</option>
-          </select>
-        </div>
-        <div class="sign-up__form-control">
-          <label for="description">Problem Statement (max 300 words) <span>*</span></label>
-          <textarea maxlength="300" id="description" placeholder="I have an Idea and created an application..."
-            name="description" required></textarea>
-        </div>
-        <!-- Team Details -->
-        <div id="team-details">
-          <!-- JavaScript will dynamically add team details here -->
-        </div>
-        <button type="button" id="addTeamMember">Add Team Member</button>
-        <!-- <div class="terms-and-conditions">
+        <form class="sign-up__form" id="signupForm">
+          <div class="follow-us">
+            <h4>Follow us</h4>
+            <a
+              href="https://www.linkedin.com/company/p5-digital-solution/"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/P5digitalsolutions"
+              target="_blank"
+            >
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/p5digitalsolutions/"
+              target="_blank"
+            >
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://twitter.com/p5_digital" target="_blank">
+              <i class="fa-brands fa-twitter fa-2x"></i>
+            </a>
+          </div>
+          <hr />
+          <div class="sign-up__form-control">
+            <label for="team_name">Team Name <span>*</span></label>
+            <input type="text" id="team_name" name="team_name" required />
+          </div>
+          <div class="sign-up__form-control">
+            <label for="address_line">Address <span>*</span></label>
+            <input type="text" id="address_line" name="address_line" required />
+          </div>
+          <div class="sign-up__form-control">
+            <label for="theme">Theme</label>
+            <select name="theme" id="theme">
+              <option value="Citizen (Traffic, Transportation etc.)">
+                Citizen (Traffic, Transportation etc.)
+              </option>
+              <option value="Real Estate & Designing">
+                Real Estate & Designing
+              </option>
+              <option value="Healthcare & Research">
+                Healthcare & Research
+              </option>
+              <option value="Education & Consultant">
+                Education & Consultant
+              </option>
+              <option value="DeFi and Finance">DeFi and Finance</option>
+            </select>
+          </div>
+          <div class="sign-up__form-control">
+            <label for="description"
+              >Problem Statement (max 300 words) <span>*</span></label
+            >
+            <textarea
+              maxlength="300"
+              id="description"
+              placeholder="I have an Idea and created an application..."
+              name="description"
+              required
+            ></textarea>
+          </div>
+          <!-- Team Details -->
+          <div id="team-details">
+            <!-- JavaScript will dynamically add team details here -->
+          </div>
+          <button type="button" id="addTeamMember">Add Team Member</button>
+          <!-- <div class="terms-and-conditions">
             <input type="checkbox" id="terms" required />
             <label for="terms"
               >I agree to the
@@ -107,64 +146,113 @@
               ></label
             >
           </div> -->
-        <div style="display: flex; margin: 10px">
-          <!-- Don't do this -->
-          <input type="checkbox" id="terms" name="name" />
-          <label for="terms">I accept the <a href="javascript:void(0);" onclick="showTerms()">Terms and Conditions
-              ;</a></label>
-        </div>
-        <div style="display: flex" class="box">
-          <button type="button" id="backButton" style="background-color: beige; color: black" onclick="goBackHome()">
-            Back </button>
-          <button type="submit" id="submitButton" disabled>Submit</button>
-        </div>
-      </form>
-    </section>
-    <footer>
-      <div style="height: 10px;background-color: black;"></div>
-    </footer>
-  </main>
-  <div id="termsContainer" style="display: none">
-    <h1>Hackathon 2023 Terms and Conditions</h1>
-    <div class="section-heading">Application and Registration</div>
-    <p> Participants must apply for Hackathon 2023 via <a href="https://www.hackathon.p5digital.in/">Hackathon
-        Registration Page</a>. If accepted, Participants will be provided instructions to confirm their registration for
-      Hackathon 2023 via email prior to the event. Participants must confirm their registration for Hackathon 2023 to
-      attend. </p>
-    <div class="section-heading">Eligibility</div>
-    <p> All participants in Hackathon 2023 must be aged 18 years or older. Any participant who is under the age of 18
-      must obtain parental permission to participate in Hackathon 2023, and they and their parent or legal guardian must
-      sign the accompanying Parental Release and Consent Form. </p>
-    <p> Participants are encouraged to work in teams of up to 5 on a maximum of one project. </p>
-    <p> Registration for Hackathon 2023 constitutes acceptance of these terms and conditions (and any amendments to
-      them), which are final and binding in all respects. </p>
-    <p> All individuals and teams that apply to Hackathon 2023 must be accepted by the Organizers in order to be
-      eligible to participate. </p>
-    <p> The Organizers reserve the right to disqualify any participant and/or team from Hackathon 2023 if, in their sole
-      discretion, the participant and/or team has not complied with these terms and conditions, has tampered with the
-      operation of Hackathon 2023, or has engaged in any conduct that is detrimental or unfair to the Organizers,
-      Hackathon 2023, or any other participant and/or team. This determination is at the sole discretion of the
-      Organizers. </p>
-    <div class="section-heading">Rules</div>
-    <p>The following actions are prohibited:</p>
-    <ol>
-      <li>Plagiarism;</li>
-      <li>Using code that was written prior to the event;</li>
-      <li> Submitting the same or similar code to multiple events, including Hackathon 2023; </li>
-      <li>Violating the Hackathon 2023 Code of Conduct;</li>
-      <li> Collaborating with outside individuals who have not been accepted as a Participant of Hackathon 2023 and have
-        not been authorized to provide assistance by the Organizers; </li>
-      <li> Any action which the Organizers in their discretion determine constitutes unfair, fraudulent, or illegal
-        competition. </li>
-    </ol>
-    <p class="highlight"> Violation of any of the above rules will result in: </p>
-    <ul>
-      <li> Automatic exclusion from and/or forfeiture of any prizes or awards; </li>
-      <li>Removal from the event.</li>
-    </ul>
-    <button type="button" onclick="closeTerms()" style="width: 150px"> Close </button>
-  </div>
-  <div id="successPopup" style="
+          <div style="display: flex; margin: 10px">
+            <!-- Don't do this -->
+            <input type="checkbox" id="terms" name="name" />
+            <label for="terms"
+              >I accept the
+              <a href="javascript:void(0);" onclick="showTerms()"
+                >Terms and Conditions ;</a
+              ></label
+            >
+          </div>
+          <div id="termsRequiredMessage" style="color: red; display: none">
+            Please accept the Terms and Conditions to proceed.
+          </div>
+          <div style="display: flex" class="box">
+            <button
+              type="button"
+              id="backButton"
+              style="background-color: beige; color: black"
+              onclick="goBackHome()"
+            >
+              Back
+            </button>
+            <button type="submit" id="submitButton" disabled>Submit</button>
+          </div>
+        </form>
+      </section>
+      <footer>
+        <div style="height: 10px; background-color: black"></div>
+      </footer>
+    </main>
+    <div id="termsContainer" style="display: none">
+      <h1>Hackathon 2023 Terms and Conditions</h1>
+      <div class="section-heading">Application and Registration</div>
+      <p>
+        Participants must apply for Hackathon 2023 via
+        <a href="https://www.hackathon.p5digital.in/"
+          >Hackathon Registration Page</a
+        >. If accepted, Participants will be provided instructions to confirm
+        their registration for Hackathon 2023 via email prior to the event.
+        Participants must confirm their registration for Hackathon 2023 to
+        attend.
+      </p>
+      <div class="section-heading">Eligibility</div>
+      <p>
+        All participants in Hackathon 2023 must be aged 18 years or older. Any
+        participant who is under the age of 18 must obtain parental permission
+        to participate in Hackathon 2023, and they and their parent or legal
+        guardian must sign the accompanying Parental Release and Consent Form.
+      </p>
+      <p>
+        Participants are encouraged to work in teams of up to 5 on a maximum of
+        one project.
+      </p>
+      <p>
+        Registration for Hackathon 2023 constitutes acceptance of these terms
+        and conditions (and any amendments to them), which are final and binding
+        in all respects.
+      </p>
+      <p>
+        All individuals and teams that apply to Hackathon 2023 must be accepted
+        by the Organizers in order to be eligible to participate.
+      </p>
+      <p>
+        The Organizers reserve the right to disqualify any participant and/or
+        team from Hackathon 2023 if, in their sole discretion, the participant
+        and/or team has not complied with these terms and conditions, has
+        tampered with the operation of Hackathon 2023, or has engaged in any
+        conduct that is detrimental or unfair to the Organizers, Hackathon 2023,
+        or any other participant and/or team. This determination is at the sole
+        discretion of the Organizers.
+      </p>
+      <div class="section-heading">Rules</div>
+      <p>The following actions are prohibited:</p>
+      <ol>
+        <li>Plagiarism;</li>
+        <li>Using code that was written prior to the event;</li>
+        <li>
+          Submitting the same or similar code to multiple events, including
+          Hackathon 2023;
+        </li>
+        <li>Violating the Hackathon 2023 Code of Conduct;</li>
+        <li>
+          Collaborating with outside individuals who have not been accepted as a
+          Participant of Hackathon 2023 and have not been authorized to provide
+          assistance by the Organizers;
+        </li>
+        <li>
+          Any action which the Organizers in their discretion determine
+          constitutes unfair, fraudulent, or illegal competition.
+        </li>
+      </ol>
+      <p class="highlight">
+        Violation of any of the above rules will result in:
+      </p>
+      <ul>
+        <li>
+          Automatic exclusion from and/or forfeiture of any prizes or awards;
+        </li>
+        <li>Removal from the event.</li>
+      </ul>
+      <button type="button" onclick="closeTerms()" style="width: 150px">
+        Close
+      </button>
+    </div>
+    <div
+      id="successPopup"
+      style="
         display: none;
         background-color: #00ff00;
         padding: 10px;
@@ -174,44 +262,59 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 100;
-      "> Form submitted successfully! </div>
-  <script>
-    // JavaScript code to add and remove team members and handle form submission
-    const teamDetailsContainer = document.getElementById("team-details");
-    const addTeamMemberButton = document.getElementById("addTeamMember");
-    const submitButton = document.getElementById("submitButton");
-    const termsCheckbox = document.getElementById("terms");
-    let memberCount = 0;
+      "
+    >
+      Form submitted successfully!
+    </div>
+    <script>
+      // JavaScript code to add and remove team members and handle form submission
+      const teamDetailsContainer = document.getElementById("team-details");
+      const addTeamMemberButton = document.getElementById("addTeamMember");
+      const submitButton = document.getElementById("submitButton");
 
-    function goBackHome() {
-      // Add your code here to redirect to the home page
-      // For example, you can use JavaScript to navigate to the home page.
-      window.location.href = "./hackthon.html"; // Replace with your actual home page URL
-    }
-
-    function showTerms() {
-      const registrationContainer = document.getElementById(
-        "registrationContainer"
+      let memberCount = 0;
+      const termsCheckbox = document.getElementById("terms");
+      const termsRequiredMessage = document.getElementById(
+        "termsRequiredMessage"
       );
-      const termsContainer = document.getElementById("termsContainer");
-      registrationContainer.style.display = "none";
-      termsContainer.style.display = "block";
-    }
 
-    function closeTerms() {
-      const registrationContainer = document.getElementById(
-        "registrationContainer"
-      );
-      const termsContainer = document.getElementById("termsContainer");
-      registrationContainer.style.display = "block";
-      termsContainer.style.display = "none";
-    }
+      termsCheckbox.addEventListener("change", () => {
+        if (termsCheckbox.checked) {
+          termsRequiredMessage.style.display = "none";
+        } else {
+          termsRequiredMessage.style.display = "block";
+        }
+      });
 
-    addTeamMemberButton.addEventListener("click", () => {
-      if (memberCount < 5) {
-        memberCount++;
-        // Create input fields for a team member
-        const teamMemberHtml = `
+      function goBackHome() {
+        // Add your code here to redirect to the home page
+        // For example, you can use JavaScript to navigate to the home page.
+        window.location.href = "./hackthon.html"; // Replace with your actual home page URL
+      }
+
+      function showTerms() {
+        const registrationContainer = document.getElementById(
+          "registrationContainer"
+        );
+        const termsContainer = document.getElementById("termsContainer");
+        registrationContainer.style.display = "none";
+        termsContainer.style.display = "block";
+      }
+
+      function closeTerms() {
+        const registrationContainer = document.getElementById(
+          "registrationContainer"
+        );
+        const termsContainer = document.getElementById("termsContainer");
+        registrationContainer.style.display = "block";
+        termsContainer.style.display = "none";
+      }
+
+      addTeamMemberButton.addEventListener("click", () => {
+        if (memberCount < 5) {
+          memberCount++;
+          // Create input fields for a team member
+          const teamMemberHtml = `
             <div class="team-member"  id="team-member-${memberCount}">
             <div style="margin-bottom: 20px;display:flex; justify-content: space-between;"><strong >Team ${memberCount} </strong>
               <button  class="btn" data-id="${memberCount}"><i class="fa fa-trash"></i> Remove</button>
@@ -240,127 +343,143 @@
             </div>
           `;
 
-        // Create a new div for the team member and append it to the container
-        const teamMemberDiv = document.createElement("div");
-        teamMemberDiv.className = "team-member";
-        teamMemberDiv.id = `team-member-${memberCount}`;
-        teamMemberDiv.innerHTML = teamMemberHtml;
-        teamDetailsContainer.appendChild(teamMemberDiv);
+          // Create a new div for the team member and append it to the container
+          const teamMemberDiv = document.createElement("div");
+          teamMemberDiv.className = "team-member";
+          teamMemberDiv.id = `team-member-${memberCount}`;
+          teamMemberDiv.innerHTML = teamMemberHtml;
+          teamDetailsContainer.appendChild(teamMemberDiv);
 
-        // Add an event listener to the newly added "Remove Member" button
-        const removeMemberButton = teamMemberDiv.querySelector(
-          `button.btn[data-id="${memberCount}"]`
-        );
-        removeMemberButton.addEventListener("click", () => {
-          teamDetailsContainer.removeChild(teamMemberDiv);
-          checkTermsAndEnableSubmit();
-          memberCount--;
-          checkAddButtonVisibility();
-        });
-      } else {
-        alert("You can only add up to 5 team members.");
-      }
-    });
-
-    termsCheckbox.addEventListener("change", () => {
-      checkTermsAndEnableSubmit();
-    });
-
-    function checkTermsAndEnableSubmit() {
-      if (termsCheckbox.checked) {
-        submitButton.disabled = false;
-      } else {
-        submitButton.disabled = true;
-      }
-    }
-
-    function checkAddButtonVisibility() {
-      if (memberCount >= 5) {
-        addTeamMemberButton.disabled = true;
-      } else {
-        addTeamMemberButton.disabled = false;
-      }
-    }
-
-    const signupForm = document.getElementById("signupForm");
-    signupForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      // Handle form submission here
-      // You can submit the form data to your server or perform any necessary actions.
-      const formData = {
-        team_name: document.getElementById("team_name").value,
-        theme: document.getElementById("theme").value,
-        address_line: document.getElementById("address_line").value,
-        description: document.getElementById("description").value,
-        team_details: [], // Initialize an empty array for team details
-
-        // You can add more form fields here
-      };
-
-      // Add team members to the formData
-      for (let i = 1; i <= memberCount; i++) {
-        const teamMember = document.getElementById(`team-member-${i}`);
-        formData.team_details.push({
-          name: teamMember.querySelector('input[name="name"]').value,
-          email: teamMember.querySelector('input[name="email"]').value,
-          phone: teamMember.querySelector('input[name="phone"]').value,
-          college: teamMember.querySelector('input[name="college"]').value,
-        });
-      }
-
-      const termsCheckbox = document.getElementById("terms");
-      if (termsCheckbox.checked) {
-        // Send the formData to the API
-        submitFormToAPI(formData);
-        // Reset the form
-        signupForm.reset();
-        // Reset the team member count
-        memberCount = 0;
-        teamDetailsContainer.innerHTML = ""; // Clear the team details container
-        // Update button visibility
-        checkAddButtonVisibility();
-
-        // Show the success message popup
-        const successPopup = document.getElementById("successPopup");
-        successPopup.style.display = "block";
-
-        // Hide the success message popup after a few seconds (e.g., 3 seconds)
-        setTimeout(() => {
-          successPopup.style.display = "none";
-        }, 3000); // Adjust the time as needed
-      } else {
-        // Display a popup if the checkbox is not checked
-        alert("Please check the Terms and Conditions.");
-      }
-    });
-
-    function submitFormToAPI(formData) {
-      fetch(
-        "https://yvoj2fs61g.execute-api.ap-south-1.amazonaws.com/p5/hackathon",
-        {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-Type": "application/json",
-          },
+          // Add an event listener to the newly added "Remove Member" button
+          const removeMemberButton = teamMemberDiv.querySelector(
+            `button.btn[data-id="${memberCount}"]`
+          );
+          removeMemberButton.addEventListener("click", () => {
+            teamDetailsContainer.removeChild(teamMemberDiv);
+            checkTermsAndEnableSubmit();
+            memberCount--;
+            checkAddButtonVisibility();
+          });
+        } else {
+          alert("You can only add up to 5 team members.");
         }
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          // Handle the API response here
-          console.log("API response:", data);
-          // You can display a success message to the user or redirect to a success page here
-        })
-        .catch((error) => {
-          // Handle errors if the API request fails
-          console.error("API error:", error);
-          // You can display an error message to the user here
-        });
-    }
+      });
 
-    // Initial check for the "Add Team Member" button visibility
-    checkAddButtonVisibility();
-  </script>
-</body>
+      termsCheckbox.addEventListener("change", () => {
+        checkTermsAndEnableSubmit();
+      });
 
+      function checkTermsAndEnableSubmit() {
+        if (termsCheckbox.checked) {
+          submitButton.disabled = false;
+        } else {
+          submitButton.disabled = true;
+        }
+      }
+      termsCheckbox.addEventListener("change", () => {
+        checkTermsAndEnableSubmit();
+      });
+
+      function checkTermsAndEnableSubmit() {
+        const termsRequiredMessage = document.getElementById(
+          "termsRequiredMessage"
+        );
+
+        if (termsCheckbox.checked) {
+          submitButton.disabled = false;
+          termsRequiredMessage.style.display = "none"; // Hide the message
+        } else {
+          submitButton.disabled = true;
+          termsRequiredMessage.style.display = "block"; // Show the message
+        }
+      }
+
+      function checkAddButtonVisibility() {
+        if (memberCount >= 5) {
+          addTeamMemberButton.disabled = true;
+        } else {
+          addTeamMemberButton.disabled = false;
+        }
+      }
+
+      const signupForm = document.getElementById("signupForm");
+      signupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // Handle form submission here
+        // You can submit the form data to your server or perform any necessary actions.
+        const formData = {
+          team_name: document.getElementById("team_name").value,
+          theme: document.getElementById("theme").value,
+          address_line: document.getElementById("address_line").value,
+          description: document.getElementById("description").value,
+          team_details: [], // Initialize an empty array for team details
+
+          // You can add more form fields here
+        };
+
+        // Add team members to the formData
+        for (let i = 1; i <= memberCount; i++) {
+          const teamMember = document.getElementById(`team-member-${i}`);
+          formData.team_details.push({
+            name: teamMember.querySelector('input[name="name"]').value,
+            email: teamMember.querySelector('input[name="email"]').value,
+            phone: teamMember.querySelector('input[name="phone"]').value,
+            college: teamMember.querySelector('input[name="college"]').value,
+          });
+        }
+
+        const termsCheckbox = document.getElementById("terms");
+        if (termsCheckbox.checked) {
+          // Send the formData to the API
+          submitFormToAPI(formData);
+          // Reset the form
+          signupForm.reset();
+          // Reset the team member count
+          memberCount = 0;
+          teamDetailsContainer.innerHTML = ""; // Clear the team details container
+          // Update button visibility
+          checkAddButtonVisibility();
+
+          // Show the success message popup
+          const successPopup = document.getElementById("successPopup");
+          successPopup.style.display = "block";
+
+          // Hide the success message popup after a few seconds (e.g., 3 seconds)
+          setTimeout(() => {
+            successPopup.style.display = "none";
+          }, 3000); // Adjust the time as needed
+        } else {
+          // Display a popup if the checkbox is not checked
+          alert("Please check the Terms and Conditions.");
+        }
+      });
+
+      function submitFormToAPI(formData) {
+        fetch(
+          "https://yvoj2fs61g.execute-api.ap-south-1.amazonaws.com/p5/hackathon",
+          {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the API response here
+            console.log("API response:", data);
+            // You can display a success message to the user or redirect to a success page here
+          })
+          .catch((error) => {
+            // Handle errors if the API request fails
+            console.error("API error:", error);
+            // You can display an error message to the user here
+          });
+      }
+
+      // Initial check for the "Add Team Member" button visibility
+      checkAddButtonVisibility();
+    </script>
+  </body>
 </html>
