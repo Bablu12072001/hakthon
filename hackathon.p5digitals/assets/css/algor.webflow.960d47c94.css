@@ -4510,6 +4510,7 @@ figcaption {
 
 .section-ticker {
   background-image: url("https://assets-global.website-files.com/62d96b0e9ea60fd1c96a1b50/62d96b0e9ea60f86ae6a1bef_noise-coarse.webp"), linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2));
+  height: 200px;
   background-size: 40px, auto;
   overflow: hidden;
 }
