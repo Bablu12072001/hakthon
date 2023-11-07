@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"
+      integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="./assets/css/algor.webflow.960d47c94.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <!-- Ionic icons -->
+    <link
+      href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="other.css" />
+    <link href="./images/p51.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="./images/p51.png" rel="apple-touch-icon" />
+    <!-- Please keep this css code to improve the font quality-->
+    <style>
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+    <!-- Hiding hubspot form-->
+    <!-- <style>
+#hs-eu-cookie-confirmation-inner {
+  display:none;
+}
+</style>
+-->
+    <style>
+      .skip-link {
+        /** left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);**/
+        width: fit-content;
+      }
+    </style>
+    <!--hs form style css in global footer, education, ace contact, contact us -->
+    <style>
+      .hbspt-form > form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+      }
+
+      label {
+        font-weight: 500;
+        display: block;
+        color: #201f21;
+        margin-bottom: 0.4rem;
+      }
+
+      fieldset > div > .input,
+      fieldset > div > div > .input,
+      fieldset > div > div > div > div > .input {
+        height: auto !important;
+        padding-top: 0 !important;
+        padding-left: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        transition: none !important;
+        color: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+      }
+
+      .input > input,
+      .input > select,
+      .input > textarea {
+        display: block;
+        width: 100% !important;
+        padding: 8px 12px;
+        line-height: 1.42857143;
+        vertical-align: middle;
+        height: 3.125rem;
+        margin-bottom: 0;
+        padding-right: 2rem;
+        padding-left: 2rem;
+        border: 1px solid rgba(32, 31, 33, 0.4);
+        border-radius: 50rem;
+        background-color: transparent;
+        color: inherit;
+        text-decoration: inherit;
+        font-size: inherit;
+      }
+
+      fieldset {
+        display: flex;
+        max-width: 100% !important;
+      }
+
+      .hs_email.hs-email,
+      .form-columns-2 > div > .hs-form-field,
+      .form-columns-1 > .hs-form-field,
+      .form-columns-1 > .hs-dependent-field,
+      .legal-consent-container
+        > div
+        > .hs-dependent-field
+        > .hs-form-field
+        > .input
+        > .inputs-list
+        > li
+        > label
+        > span {
+        width: 100% !important;
+      }
+
+      .form-columns-2 > div {
+        width: 50%;
+      }
+
+      .form-columns-0 {
+        display: none;
+      }
+
+      .inputs-list {
+        list-style: none;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-left: 0;
+      }
+
+      input[type="checkbox"] {
+        width: 1.5rem;
+        height: 1.5rem;
+        min-height: 1.5rem;
+        min-width: 1.5rem;
+        margin-top: 0px;
+        margin-right: 1rem;
+        border-width: 2px;
+        border-top-color: hsl(223deg 100% 15%);
+        border-right-color: hsl(223deg 100% 15%);
+        border-bottom-color: hsl(223deg 100% 15%);
+        border-left-color: hsl(223deg 100% 15%);
+        border-radius: 0.5rem;
+        transition-property: all;
+        transition-duration: 200ms;
+        transition-timing-function: ease;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      .actions > .hs-button {
+        padding: 0.75rem 3rem 0.75rem 1.6rem;
+        border: 1px #000;
+        border-radius: 50rem;
+        background-color: #dcfe54;
+        background-image: url("https://assets-global.website-files.com/62d96b0e9ea60fd1c96a1b50/62d96b0e9ea60f6d3d6a1cfc_arrow-right.svg");
+        background-position: 82% 50%;
+        background-size: auto;
+        background-repeat: no-repeat;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+        font-family: Suisseintl, sans-serif;
+        color: #201f21;
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: center;
+        text-decoration: none;
+        width: 12rem;
+      }
+
+      .input > textarea {
+        min-height: 13rem;
+        border-radius: 30px !important;
+      }
+
+      .hs-error-msg,
+      .hs-main-font-element {
+        color: red;
+      }
+
+      .hs-error-msgs {
+        margin-left: 20px;
+      }
+
+      [role="checkbox"] > li > label > span {
+        vertical-align: super;
+      }
+
+      .submitted-message {
+        color: black !important;
+      }
+
+      .legal-consent-container > .hs-richtext,
+      .hs_recaptcha {
+        display: none;
+      }
+
+      @media only screen and (max-width: 500px) {
+        .hbspt-form > form,
+        fieldset {
+          display: block;
+        }
+
+        form > fieldset > div {
+          padding: 10px 0px;
+        }
+
+        .form-columns-2 > div {
+          width: 100%;
+        }
+      }
+    </style>
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <style>
+      .hs-form-320e876f-01c1-4d39-b4aa-2a1d654d09be_4e506186-8057-4d54-8679-b8227dc78efb.hs-form {
+        width: 100% !important;
+      }
+
+      .video-button:hover > .video-button-icon {
+        display: none;
+      }
+
+      .video-button:hover > .video-button-icon.orange {
+        display: inline-block;
+      }
+
+      .hackathon-track-tab.w--current > .hackathon-tabs-label {
+        color: #01dc94;
+      }
+
+      .hackathon-track-tab:hover > .hackathon-tabs-label {
+        color: #01dc94 !important;
+      }
+      .card1 {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hackathon-dates">
+      <div class="page-padding">
+        <div class="container-medium">
+          <h3
+            style="
+              text-align: center;
+              color: white;
+
+              font-family: Poppins;
+              font-weight: 600;
+              font-size: 40px;
+            "
+          >
+            Slected Candidate ‍ List
+          </h3>
+          <div class="hackathon-date-grid" id="card-container"></div>
+
+          <!-- Data will be displayed here -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      fetch(
+        "https://yvoj2fs61g.execute-api.ap-south-1.amazonaws.com/p5/get_selected_hackathon_candidates"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const cardContainer = document.getElementById("card-container");
+          const teamData = data;
+          console.log("This is data", teamData);
+
+          // Loop through the data and create a card for each item
+          teamData["body-json"]["body"].forEach((item) => {
+            const cardItem = document.createElement("div");
+            cardItem.classList.add("card1"); // Add a class for styling
+
+            const itemInfo = document.createElement("p");
+            itemInfo.innerHTML = `
+
+              <div
+              id="w-node-_99f4e459-e93c-b7a6-51d0-72c59d9b520b-af439189"
+              class="hackathon-date-card"
+            >
+              <div class="hackathon-date-card-inner">
+              <p style="color: green; font-size: 25px; font-family: Poppins">${item.team_name}</p>
+              <p  style="color: black; font-size: 20px; font-family: Poppins" >Team Code: ${item.team_code}</p>
+              <p  style="color: black; font-size: 20px; font-family: Poppins">Number of Members: ${item.number_of_members}</p>
+              </div>
+            </div>
+            
+          
+            <br />`;
+
+            cardItem.appendChild(itemInfo);
+            cardContainer.appendChild(cardItem);
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

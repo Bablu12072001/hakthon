@@ -521,6 +521,17 @@
               font-size: calc(0.7497390396659708rem + 0.4175365344467641vw);
             }
           }
+
+          .button-beni:hover {
+            /* Set the styles you want for when the button is hovered (in this case, no styles) */
+            /* For example, if you want to remove text color change on hover, you can set color to the same as the original color */
+            color: inherit;
+            /* If there is a background color change, you can set it to the same as the original background color */
+            background-color: white;
+            /* You can set other styles as needed */
+            /* text-decoration: none; if you want to remove underline, etc. */
+            text-decoration: none;
+          }
         </style>
       </div>
       <main id="main" class="main-wrapper">
@@ -551,7 +562,7 @@
                   </div>
                   <div style="text-align: center">
                     <h3 style="color: white; font-family: Poppins">
-                      " The list of selected candidates will be coming soon "
+                      " The list of selected candidates show in below "
                     </h3>
                   </div>
                   <!-- Popup container -->
@@ -1210,62 +1221,83 @@
                 <br />
                 <h5>Vijay Art</h5>
               </div>
-              <!-- <div class="col-md-2">
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                >
-                  <img
-                    src="fellamart.png"
-                    height="150em"
-                    style="border-radius: 10%"
-                    alt="  website creation"
-                  />
-                  <br />
-                  <h5>Fellamart</h5>
-                </div>
-              </div> -->
-              <!-- <div class="col-md-2">
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                >
-                  <img
-                    src="p5eventmngmnt.png"
-                    style="border-radius: 10%"
-                    alt="  Management"
-                  />
-                  <br />
-                  <h5>P5 Events Management</h5>
-                </div>
-              </div> -->
-              <!-- <div class="col-md-2">
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                  "
-                >
-                  <br />
-
-                  <img src="subhras.png" width="50%" alt=" Subhras" />
-                  <br />
-                  <h5>Subhras</h5>
-                </div>
-              </div> -->
             </div>
           </div>
         </section>
         <div class="hackathon-dates">
           <div class="page-padding">
             <div class="container-medium">
+              <h3
+                style="
+                  text-align: center;
+                  color: white;
+
+                  font-family: Poppins;
+                  font-weight: 600;
+                  font-size: 40px;
+                "
+              >
+                Slected Candidate ‍ List
+              </h3>
+              <div class="hackathon-date-grid" id="card-container"></div>
+
+              <!-- Data will be displayed here -->
+
+              <script>
+                fetch(
+                  "https://yvoj2fs61g.execute-api.ap-south-1.amazonaws.com/p5/get_selected_hackathon_candidates"
+                )
+                  .then((response) => response.json())
+                  .then((data) => {
+                    const cardContainer =
+                      document.getElementById("card-container");
+                    const teamData = data;
+                    console.log("This is data", teamData);
+
+                    // Loop through the data and create a card for each item
+                    teamData["body-json"]["body"].forEach((item) => {
+                      const cardItem = document.createElement("div");
+                      cardItem.classList.add("card1"); // Add a class for styling
+
+                      const itemInfo = document.createElement("p");
+                      itemInfo.innerHTML = `
+
+              <div
+              id="w-node-_99f4e459-e93c-b7a6-51d0-72c59d9b520b-af439189"
+              class="hackathon-date-card"
+            >
+              <div class="hackathon-date-card-inner">
+              <p style="color: green; font-size: 25px; font-family: Poppins">${item.team_name}</p>
+              <p  style="color: black; font-size: 20px; font-family: Poppins" >Team Code: ${item.team_code}</p>
+              <p  style="color: black; font-size: 20px; font-family: Poppins">Number of Members: ${item.number_of_members}</p>
+              </div>
+            </div>
+            
+          
+            <br />`;
+
+                      cardItem.appendChild(itemInfo);
+                      cardContainer.appendChild(cardItem);
+                    });
+                  })
+                  .catch((error) => {
+                    console.error(error);
+                  });
+              </script>
+
+              <h3
+                style="
+                  text-align: center;
+                  color: white;
+
+                  font-family: Poppins;
+                  font-weight: 600;
+                  font-size: 40px;
+                "
+              >
+                Hackathon 2023 Event
+              </h3>
+
               <div class="padding-vertical padding-xxhuge">
                 <div
                   id="w-node-_99f4e459-e93c-b7a6-51d0-72c59d9b520b-af439189"
@@ -1283,6 +1315,7 @@
                   </div>
                 </div>
                 <br />
+
                 <div class="hackathon-date-grid">
                   <div
                     id="w-node-_99f4e459-e93c-b7a6-51d0-72c59d9b520b-af439189"
@@ -1302,7 +1335,12 @@
                     class="hackathon-date-card"
                   >
                     <div class="hackathon-date-card-inner">
-                      <h2 class="heading-hackathon-date-card">5th Nov</h2>
+                      <h2
+                        class="heading-hackathon-date-card"
+                        style="color: gray"
+                      >
+                        <s>5th Nov</s>
+                      </h2>
                       <p class="hackathon-body">Registration <br />Closes</p>
                       <p>
                         Last day for the registration and the submission of the
@@ -1315,7 +1353,7 @@
                     class="hackathon-date-card"
                   >
                     <div class="hackathon-date-card-inner">
-                      <h2 class="heading-hackathon-date-card">6th Nov</h2>
+                      <h2 class="heading-hackathon-date-card">7th Nov</h2>
                       <p class="hackathon-body">Notification <br />Day</p>
                       <p>
                         Shortlisted candidates will be notified through email /
@@ -1430,9 +1468,7 @@
                 </div>
               </div>
             </div>
-            <h3 class="hackathon-date-grid-text top" style="color: black">
-              Hackathon 2023 Event
-            </h3>
+
             <h3 class="hackathon-date-grid-text left">October</h3>
             <h3 class="hackathon-date-grid-text right">2023</h3>
             <h3 class="hackathon-date-grid-text bottom">

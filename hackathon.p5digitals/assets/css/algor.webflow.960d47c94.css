@@ -4496,7 +4496,7 @@ figcaption {
   position: relative;
   white-space: nowrap;
     will-change: transform;
-    animation: marquee-horizontal 5s linear infinite;
+    animation: marquee-horizontal 40s linear infinite;
 }
  @keyframes marquee-horizontal {
    from {
